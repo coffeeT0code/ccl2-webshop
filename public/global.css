@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    font-family: Mulish;
+    color: black;
+}
+
+img {
+    border-radius: 20px;
+}
+
+.cart {
+    border-radius: 0;
+    margin: 5px 5px -2px 5px;
+}
+.heading {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+}
+
+#heading {
+    margin-left: 30px;
+    color: #9CAAAB;
+
+}
+body {
+    font-size: 14px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background: url("./img/bergePink.jpg") 0 80.5%;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+svg {
+    padding: 3px;
+    alignment: center;
+
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-btn, .learn-btn {
+    margin: 0 5px 0 5px;
+    font-family: Mulish;
+    text-decoration: none;
+    color: #252929;
+    background: #F9B1AC;
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.nav-btn:active, .nav-btn:focus, .learn-btn:active {
+    background: #FCF5F3;
+}
+
+.side-items {
+    color: #FA7E77;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    right: 20px;
+    justify-content: center;
+}
+
+.side-btn {
+    color: #FA7E77;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.side-btn:hover {
+    color: #F4F7F8;
+}
+
+#cart {
+    margin-top: 8px;
+}
+
+.shoppingCart {
+    position: fixed;
+    right: 130px;
+    top: 0;
+    z-index: 99;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: "Bad Script";
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+
+@media (max-width: 950px) {
+
+    .navBar {
+        margin: 10px;
+        height: 30px;
+    }
+
+    .heading {
+        margin-top: 70px;
+    }
+
+}

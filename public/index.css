@@ -1,0 +1,203 @@
+.indexHeadWrapper {
+    background: url("./img/bergePink.jpg");
+    background-position: 0 85%;
+    width: 100%;
+    height: auto;
+    padding: 20px 20%;
+}
+
+.learn-btn {
+    margin: 0;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.indexContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px 225px 83px 225px;
+}
+
+.random-img {
+    max-height: 201px;
+    align-self: center;
+}
+
+.dynamicImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Content-text {
+    text-align: center;
+    font-size: 24px;
+    color: #9CAAAB;
+    margin-bottom: 10px;
+}
+
+.Content1-text {
+    font-size: 16px;
+    color: #252929;
+    margin: 30px 50px 40px 40px;
+    width: 50%;
+}
+
+.banner1 {
+    background: #FBD3D1;
+    position: relative;
+    left: 0;
+    width: 70%;
+    height: 351px;
+    border-radius: 0px 20px 20px 0;
+}
+
+.banner1-img {
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    /*object-position: -50px 0;*/
+    position: absolute;
+    right: 0;
+    top: 0px;
+    border-radius: 0 20px 20px 0;
+}
+
+.banner2 {
+    background:  #F9B1AC;
+    position: relative;
+    right: 0;
+    margin-left: auto;
+    margin-top: 83px;
+    width: 70%;
+    height: 351px;
+    border-radius: 20px 0 0 20px;
+}
+
+.Content2-text {
+    font-size: 16px;
+    width: 50%;
+    height: auto;
+    color: #252929;
+    margin: 0 40px 10px 10px;
+    text-align: right;
+}
+
+.banner2-img {
+    max-width: 30%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 20px 0 0 20px;
+}
+
+.banner3 {
+    display: grid;
+    grid-template-columns: 1fr 80%;
+    background: #FA7E77;
+    position: relative;
+    width: 100%;
+    height: 351px;
+    margin: 83px 0 0 0;
+}
+
+.banner3-content {
+    min-width: 300px;
+}
+
+.banner3-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 35%;
+    border-radius: 0;
+
+}
+
+.Content3-text {
+    font-size: 16px;
+    color: #F4F7F8;
+    margin: 40px 50px 40px 40px;
+}
+
+.book-text {
+    font-family: "Bad Script";
+    margin: 40px;
+    font-size: 36px;
+
+}
+
+.banner2 .book-text {
+    text-align: right;
+    width: 50%;
+    align-self: flex-end;
+}
+
+.banner3 .book-text {
+    color: #F4F7F8;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: right;*/
+    align-items: flex-end;
+
+}
+@media (max-width: 950px) {
+
+    .indexContent {
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+    }
+
+    .Content-text {
+        margin-bottom: 10px;
+    }
+
+    .Content1-text {
+        margin-top: 0;
+    }
+
+    .book-text {
+        font-size: 20px;
+        width: 50%;
+        margin: 20px 40px 0 40px;
+    }
+
+    .banner1, .banner2 {
+        width: 95%;
+        height: fit-content;
+    }
+
+    .banner3 {
+        margin-bottom: 50px;
+    }
+
+    .banner3-img {
+        width: 35%;
+        object-position: 60% 35%;
+
+    }
+
+    .indexHeadWrapper {
+        position: relative;
+        background-position: 0 84.5%;
+        padding: 10px 40px;
+    }
+
+}
+

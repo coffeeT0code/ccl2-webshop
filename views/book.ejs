@@ -1,0 +1,98 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Mulish&display=swap" rel="stylesheet" />-->
+<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
+<!--    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>-->
+<!--    <link href="global.css" rel="stylesheet" />-->
+<!--    <link href="book.css" rel="stylesheet" />-->
+<!--    <title>Register</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<nav>-->
+<!--    <div class="heading">AESTHETICALLY</div>-->
+<!--    <div class="navBar">-->
+<!--        <a href="/" class="nav-btn">Home</a>-->
+<!--        <a href="/book" class="nav-btn">Photography</a>-->
+<!--        <a href="/shop" class="nav-btn">Art</a>-->
+<!--        <a href="/shop" class="nav-btn">Jewellery</a>-->
+<!--        <a href="/404" class="nav-btn">Collections</a>-->
+<!--        <a href="/404" class="nav-btn">-->
+<!--            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M16.1758 16.5002C15.8273 16.0717 15.1975 16.0069 14.769 16.3553C14.3406 16.7038 14.2757 17.3337 14.6242 17.7621L16.1758 16.5002ZM21.0242 25.631C21.3727 26.0594 22.0025 26.1243 22.431 25.7758C22.8594 25.4273 22.9243 24.7975 22.5758 24.369L21.0242 25.631ZM18.4 10.0492C18.4 14.4791 14.7444 18.0984 10.2 18.0984V20.0984C15.8177 20.0984 20.4 15.6147 20.4 10.0492H18.4ZM10.2 18.0984C5.65562 18.0984 2 14.4791 2 10.0492H0C0 15.6147 4.58234 20.0984 10.2 20.0984V18.0984ZM2 10.0492C2 5.61926 5.65562 2 10.2 2V0C4.58234 0 0 4.48365 0 10.0492H2ZM10.2 2C14.7444 2 18.4 5.61926 18.4 10.0492H20.4C20.4 4.48365 15.8177 0 10.2 0V2ZM14.6242 17.7621L21.0242 25.631L22.5758 24.369L16.1758 16.5002L14.6242 17.7621Z" fill="white"/>-->
+<!--            </svg>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--<div class="side-items">-->
+<!--    <a href="/404" id="cart">-->
+<!--        <img class="cart" src="./img/cart.svg">-->
+<!--    </a>-->
+<!--    <a class="side-btn" href="/login" >Sign In</a>-->
+<!--    <a class="side-btn" href="/logout" >logout</a>-->
+<!--</div>-->
+
+<!--<div class="wrapper">-->
+<!--<h1 class="heading"> <%= (typeof title != "undefined" ? title : "") %></h1>-->
+
+<!--<p>Please fill in this form to request a photoshooting</p>-->
+
+<!--<form action="book" id="ft-form" method="POST" accept-charset="UTF-8">-->
+<!--        <fieldset>-->
+<!--            <legend>For person</legend>-->
+<!--            <label>-->
+<!--                Name-->
+<!--                <input value="<%= (user.name ? user.name : null) %>" type="text" name="name" required>-->
+<!--            </label>-->
+<!--            <label>-->
+<!--                Surname-->
+<!--                <input value="<%= (user.surname ? user.surname : null) %>" type="text" name="surname" required>-->
+<!--            </label>-->
+<!--            <div class="two-cols">-->
+<!--                <label>-->
+<!--                    Email address-->
+<!--                    <input value="<%= (user.email ? user.email : null) %>" type="email" name="email" required>-->
+<!--                </label>-->
+<!--                <label>-->
+<!--                    Phone number-->
+<!--                    <input type="tel" name="phone">-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </fieldset>-->
+<!--        <fieldset>-->
+<!--            <legend>Appointment request</legend>-->
+<!--            <p>Confirmation requested by</p>-->
+<!--            <div class="inline">-->
+<!--                <label>-->
+<!--                    <input type="radio" name="Confirmation requested by" value="email" checked>-->
+<!--                    Email-->
+<!--                </label>-->
+<!--                <label>-->
+<!--                    <input type="radio" name="Confirmation requested by" value="phone">-->
+<!--                    Phone call-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </fieldset>-->
+<!--        <div class="btns">-->
+<!--            <input type="text" name="_gotcha" value="" style="display:none;">-->
+<!--            <input type="submit" value="Submit request">-->
+<!--        </div>-->
+<!--    </form>-->
+
+<!--</div>-->
+<!--<script>-->
+<!--    $( function() {-->
+<!--        $( "#datepicker" ).datepicker();-->
+<!--    } );-->
+<!--    var currentDate = $( "#datepicker" ).datepicker( "getDate" );-->
+<!--    console.log(currentDate);-->
+<!--</script>-->
+<!--</body>-->
+
+<!--</html>-->

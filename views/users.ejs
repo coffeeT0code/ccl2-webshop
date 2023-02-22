@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="global.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../users.css">
+    <title>Users</title>
+</head>
+<body>
+    <h1 class="heading">SSC Project <span class="accent">|</span> <%= title %></h1>
+
+    <div class="wrapper">
+        <% for (var i = 0; i < users.length; i++) { %>
+            <a class="card" href="/user/<%= users[i].id %>">
+                <h4 class="contentTxt contentId"><%= users[i].id %></h4>
+                <h4 class="contentTxt contentHero"><%= users[i].name %> <%= users[i].surname%></h4>
+                <h4 class="contentTxt contentReal">Password: <span class="realName"><%= users[i].password%> </span></h4>
+            </a>
+        <% } %>
+        <a class="btn" href="/" >Go back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Mulish&display=swap" rel="stylesheet" />
+    <link href="/global.css" rel="stylesheet" />
+    <link href="/shop.css" rel="stylesheet"/>
+
+    <title>Shop | Aestethically</title>
+</head>
+<body>
+
+<nav>
+    <div class="nav-main">
+        <div class="heading">AESTHETICALLY</div>
+        <div class="navBar">
+            <a href="/" class="nav-btn" id="home">Home</a>
+            <a href="/book" class="nav-btn">Photography</a>
+            <a href="/shop" class="nav-btn">Art</a>
+            <a href="/shop" class="nav-btn">Jewellery</a>
+            <a href="/404" class="nav-btn">Collections</a>
+            <a href="/404" class="nav-btn">
+                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.1758 16.5002C15.8273 16.0717 15.1975 16.0069 14.769 16.3553C14.3406 16.7038 14.2757 17.3337 14.6242 17.7621L16.1758 16.5002ZM21.0242 25.631C21.3727 26.0594 22.0025 26.1243 22.431 25.7758C22.8594 25.4273 22.9243 24.7975 22.5758 24.369L21.0242 25.631ZM18.4 10.0492C18.4 14.4791 14.7444 18.0984 10.2 18.0984V20.0984C15.8177 20.0984 20.4 15.6147 20.4 10.0492H18.4ZM10.2 18.0984C5.65562 18.0984 2 14.4791 2 10.0492H0C0 15.6147 4.58234 20.0984 10.2 20.0984V18.0984ZM2 10.0492C2 5.61926 5.65562 2 10.2 2V0C4.58234 0 0 4.48365 0 10.0492H2ZM10.2 2C14.7444 2 18.4 5.61926 18.4 10.0492H20.4C20.4 4.48365 15.8177 0 10.2 0V2ZM14.6242 17.7621L21.0242 25.631L22.5758 24.369L16.1758 16.5002L14.6242 17.7621Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</nav>
+
+<div class="side-items">
+    <a href="/shop/cart" id="cart" data-count="0">
+        <img class="cart" src="./img/cart.svg">
+    </a>
+    <a class="side-btn" href="/login" >Sign In</a>
+    <a class="side-btn" href="/logout" >logout</a>
+</div>
+<h1 class="heading" id="heading"><%= title %></h1>
+
+<div class="shop-wrapper">
+    <% for (var i = 0; i < items.length; i++) { %>
+    <div>
+        <a href="/shop/<%= items[i].id %>">
+            <div class="item-wrapper">
+                <div class="shop-item"><img src="./img/<%= items[i].img%>" alt=""></div>
+                <div id="itemTitle">
+                    <p><%= items[i].itemTitle%></p>
+                </div>
+        </a>
+        <form method="post" action="/shop/<%= items[i].id%>">
+            <button class="addToCart" type="submit" value="<%=items[i].id%>">add to cart</button>
+        </form>
+        </div>
+    </div>
+    <% } %>
+</div>
+
+<script>
+    let cart = document.getElementById('cart');
+    let addBtns = document.getElementsByClassName('addToCart');
+
+    for (let i = 0; i < addBtns.length; i++) {
+        const btn = addBtns[i];
+        btn.addEventListener("click", (e) => {
+                addToCart(e.target.value)
+        });
+    }
+
+    async function addToCart(item) {
+        await fetch("/item/"+item, {
+            method: "POST"
+        })
+    }
+
+</script>
+<script type="text/javascript">
+    // <![CDATA[
+    var colour="#FA7E77";
+    var sparkles=120;
+
+    /****************************
+     *  Tinkerbell Magic Sparkle *
+     * (c) 2005 mf2fm web-design *
+     *  http://www.mf2fm.com/rv  *
+     * DON'T EDIT BELOW THIS BOX *
+     ****************************/
+    var x=ox=400;
+    var y=oy=300;
+    var swide=800;
+    var shigh=600;
+    var sleft=sdown=0;
+    var tiny=new Array();
+    var star=new Array();
+    var starv=new Array();
+    var starx=new Array();
+    var stary=new Array();
+    var tinyx=new Array();
+    var tinyy=new Array();
+    var tinyv=new Array();
+
+    window.onload=function() { if (document.getElementById) {
+        var i, rats, rlef, rdow;
+        for (var i=0; i<sparkles; i++) {
+            var rats=createDiv(3, 3);
+            rats.style.visibility="hidden";
+            document.body.appendChild(tiny[i]=rats);
+            starv[i]=0;
+            tinyv[i]=0;
+            var rats=createDiv(5, 5);
+            rats.style.backgroundColor="transparent";
+            rats.style.visibility="hidden";
+            var rlef=createDiv(1, 5);
+            var rdow=createDiv(5, 1);
+            rats.appendChild(rlef);
+            rats.appendChild(rdow);
+            rlef.style.top="2px";
+            rlef.style.left="0px";
+            rdow.style.top="0px";
+            rdow.style.left="2px";
+            document.body.appendChild(star[i]=rats);
+        }
+        set_width();
+        sparkle();
+    }}
+
+    // dont look at this, this is just for fun :)
+    // sparkling cursor
+
+    function sparkle() {
+        var c;
+        if (x!=ox || y!=oy) {
+            ox=x;
+            oy=y;
+            for (c=0; c<sparkles; c++) if (!starv[c]) {
+                star[c].style.left=(starx[c]=x)+"px";
+                star[c].style.top=(stary[c]=y)+"px";
+                star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+                star[c].style.visibility="visible";
+                starv[c]=50;
+                break;
+            }
+        }
+        for (c=0; c<sparkles; c++) {
+            if (starv[c]) update_star(c);
+            if (tinyv[c]) update_tiny(c);
+        }
+        setTimeout("sparkle()", 40);
+    }
+
+    function update_star(i) {
+        if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+        if (starv[i]) {
+            stary[i]+=1+Math.random()*3;
+            if (stary[i]<shigh+sdown) {
+                star[i].style.top=stary[i]+"px";
+                starx[i]+=(i%5-2)/5;
+                star[i].style.left=starx[i]+"px";
+            }
+            else {
+                star[i].style.visibility="hidden";
+                starv[i]=0;
+                return;
+            }
+        }
+        else {
+            tinyv[i]=50;
+            tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+            tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+            tiny[i].style.width="2px";
+            tiny[i].style.height="2px";
+            star[i].style.visibility="hidden";
+            tiny[i].style.visibility="visible"
+        }
+    }
+
+    function update_tiny(i) {
+        if (--tinyv[i]==25) {
+            tiny[i].style.width="1px";
+            tiny[i].style.height="1px";
+        }
+        if (tinyv[i]) {
+            tinyy[i]+=1+Math.random()*3;
+            if (tinyy[i]<shigh+sdown) {
+                tiny[i].style.top=tinyy[i]+"px";
+                tinyx[i]+=(i%5-2)/5;
+                tiny[i].style.left=tinyx[i]+"px";
+            }
+            else {
+                tiny[i].style.visibility="hidden";
+                tinyv[i]=0;
+                return;
+            }
+        }
+        else tiny[i].style.visibility="hidden";
+    }
+
+    document.onmousemove=mouse;
+    function mouse(e) {
+        set_scroll();
+        y=(e)?e.pageY:event.y+sdown;
+        x=(e)?e.pageX:event.x+sleft;
+    }
+
+    function set_scroll() {
+        if (typeof(self.pageYOffset)=="number") {
+            sdown=self.pageYOffset;
+            sleft=self.pageXOffset;
+        }
+        else if (document.body.scrollTop || document.body.scrollLeft) {
+            sdown=document.body.scrollTop;
+            sleft=document.body.scrollLeft;
+        }
+        else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+            sleft=document.documentElement.scrollLeft;
+            sdown=document.documentElement.scrollTop;
+        }
+        else {
+            sdown=0;
+            sleft=0;
+        }
+    }
+
+    window.onresize=set_width;
+    function set_width() {
+        if (typeof(self.innerWidth)=="number") {
+            swide=self.innerWidth;
+            shigh=self.innerHeight;
+        }
+        else if (document.documentElement && document.documentElement.clientWidth) {
+            swide=document.documentElement.clientWidth;
+            shigh=document.documentElement.clientHeight;
+        }
+        else if (document.body.clientWidth) {
+            swide=document.body.clientWidth;
+            shigh=document.body.clientHeight;
+        }
+    }
+
+    function createDiv(height, width) {
+        var div=document.createElement("div");
+        div.style.position="absolute";
+        div.style.height=height+"px";
+        div.style.width=width+"px";
+        div.style.overflow="hidden";
+        div.style.backgroundColor=colour;
+        return (div);
+    }
+    // ]]>
+</script>
+
+</body>
+</html>
+

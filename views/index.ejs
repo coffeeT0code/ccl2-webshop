@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Mulish&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="global.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+
+    <title>Index</title>
+</head>
+<body>
+<% let randomImage = []%>
+<% randomImage[0] = Math.floor((Math.random() * randomImageDisplay[0].length)) %>
+<% randomImage[1] = Math.floor((Math.random() * randomImageDisplay[1].length)) %>
+<% randomImage[2] = Math.floor((Math.random() * randomImageDisplay[2].length)) %>
+
+<nav>
+    <div class="nav-main">
+        <div class="heading">AESTHETICALLY</div>
+        <div class="navBar">
+            <a href="/" class="nav-btn" id="home">Home</a>
+            <a href="/book" class="nav-btn">Photography</a>
+            <a href="/shop" class="nav-btn">Art</a>
+            <a href="/shop" class="nav-btn">Jewellery</a>
+            <a href="/404" class="nav-btn">Collections</a>
+            <a href="/404" class="nav-btn">
+                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.1758 16.5002C15.8273 16.0717 15.1975 16.0069 14.769 16.3553C14.3406 16.7038 14.2757 17.3337 14.6242 17.7621L16.1758 16.5002ZM21.0242 25.631C21.3727 26.0594 22.0025 26.1243 22.431 25.7758C22.8594 25.4273 22.9243 24.7975 22.5758 24.369L21.0242 25.631ZM18.4 10.0492C18.4 14.4791 14.7444 18.0984 10.2 18.0984V20.0984C15.8177 20.0984 20.4 15.6147 20.4 10.0492H18.4ZM10.2 18.0984C5.65562 18.0984 2 14.4791 2 10.0492H0C0 15.6147 4.58234 20.0984 10.2 20.0984V18.0984ZM2 10.0492C2 5.61926 5.65562 2 10.2 2V0C4.58234 0 0 4.48365 0 10.0492H2ZM10.2 2C14.7444 2 18.4 5.61926 18.4 10.0492H20.4C20.4 4.48365 15.8177 0 10.2 0V2ZM14.6242 17.7621L21.0242 25.631L22.5758 24.369L16.1758 16.5002L14.6242 17.7621Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</nav>
+
+<div class="side-items">
+    <a href="/shop/cart" id="cart">
+        <img class="cart" src="./img/cart.svg">
+    </a>
+    <a class="side-btn" href="/login" >Sign In</a>
+    <a class="side-btn" href="/logout" >logout</a>
+</div>
+
+<div class="indexHeadWrapper">
+    <h2>Prints, Digital Art, Paintings, Jewellery</h2>
+    <h1>Handcrafted <br>
+    Designs</h1>
+    <p>Hi there! We are a small group of besties that love to create and improve.<br> Enjoy our webshop!</p>
+    <a class="learn-btn" href="/404">Learn more</a>
+
+    <a class="nav-btn" href="/404">Wishlist</a>
+</div>
+
+<div class="indexContent">
+    <div class="dynamicImg">
+        <div class="Content-text">Postcards</div>
+        <img class="random-img"  id="img1" src="./img/<%= randomImageDisplay[1][randomImage[1]] %>" alt="">
+    </div>
+    <div class="dynamicImg">
+        <div class="Content-text">Prints</div>
+        <img class="random-img" id="img0" src="./img/<%= randomImageDisplay[0][randomImage[0]] %>" alt="">
+    </div>
+    <div class="dynamicImg">
+        <div class="Content-text">Paintings</div>
+        <img class="random-img" id="img2" src="./img/<%= randomImageDisplay[2][randomImage[2]] %>" alt="">
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="banner1">
+        <div>
+            <div class="book-text"><%= indexData[0].heading %></div>
+            <div class="Content1-text"><%= indexData[0].description %></div>
+        </div>
+        <img class="banner1-img" src="./img/<%= indexData[0].img %>" alt="">
+    </div>
+
+    <div class="banner2">
+        <div class="text-wrapper">
+            <div class="book-text"><%= indexData[1].heading %></div>
+            <div class="Content2-text"><%= indexData[1].description %></div>
+        </div>
+        <img class="banner2-img" src="./img/<%= indexData[1].img %>" alt="">
+    </div>
+
+    <div class="banner3">
+        <div class="banner3-content">
+            <h2 class="book-text"><%= indexData[2].heading %></h2>
+            <p class="Content3-text"><%= indexData[2].description %></p>
+        </div>
+        <img class="banner3-img" src="./img/<%= indexData[2].img %>" alt="">
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    let randomArray = <%- JSON.stringify(randomImageDisplay) %>
+    console.log(randomArray)
+    let intervall = setInterval(randomPictures, 5000);
+
+    function randomPictures() {
+
+        for (let i = 0; i < randomArray.length; i++) {
+            $('#img'+i).fadeOut("slow",function(){
+                $('#img'+i).attr("src", './img/' + randomArray[i][Math.floor((Math.random() * randomArray[i].length))])
+                $('#img'+i).fadeIn();
+            });
+        }
+    }
+
+</script>
+</body>
+</html>

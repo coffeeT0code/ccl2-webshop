@@ -1,0 +1,55 @@
+* {
+    color: #6b7280;
+
+}
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 13px;
+    grid-column-gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+
+}
+
+nav {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+label {
+    display: none;
+}
+
+.register-container {
+    width: 100%;
+    display: flex;
+}
+
+.register-btn {
+    justify-content: right;
+    align-content: flex-end;
+    color: #c4c4c4;
+    margin-left: 70%;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.register-btn:hover {
+    color: #FA7E77;
+    text-decoration: underline;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    display: flex;
+}
